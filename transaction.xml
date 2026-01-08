@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.08"><FIToFICstmrCdtTrf><CdtTrfTxInf><PmtId><EndToEndId>TX-20260107160432-367</EndToEndId></PmtId><Amt><InstdAmt Ccy="CHF">100.00</InstdAmt></Amt><RmtInf><Ustrd>Automated Payment TX-20260107160432-367</Ustrd></RmtInf><DbtrAcct><Id><IBAN>CH9300700111111111111</IBAN></Id></DbtrAcct><CdtrAcct><Id><IBAN>CH9300700333333333333</IBAN></Id></CdtrAcct></CdtTrfTxInf></FIToFICstmrCdtTrf></Document>

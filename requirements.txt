@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+sqlmodel
+psycopg2-binary
+pydantic
+pydantic-settings
+numpy
+cryptography
+pytest
+alembic
+redis
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart
+httpx
+bcrypt

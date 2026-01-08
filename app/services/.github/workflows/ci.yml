@@ -1,0 +1,35 @@
+name: Iron Vault CI/CD Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  security-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest bandit safety
+
+      - name: Security Audit (Dependencies)
+        # Check if any libraries have known security vulnerabilities (CVE)
+        run: safety check
+
+      - name: Static Code Analysis (Bandit)
+        # Check your code for common vulnerabilities (SQL Injection, Hardcoded Passwords)
+        run: bandit -r app/ -x tests/
+
+      - name: Run Tests (Pytest)
+        # Ensure business logic works
+        run: pytest
+
+      # The next step would be "Build Docker Image" & "Sign Image" (Cosign) -> 
+      # not yet set up server registry. but after it is set, this process will be automated.
